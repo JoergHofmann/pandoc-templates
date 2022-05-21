@@ -131,12 +131,16 @@ $endfor$
 
 \starttext
 $if(title)$
+\setupbar[color=black]
+\noheaderandfooterlines
 \startalignment[middle]
+\blank[1*big]
   {\tfd\setupinterlinespace $title$}
 $if(subtitle)$
   \smallskip
   {\tfa\setupinterlinespace $subtitle$}
 $endif$
+\blank[45*medium]
 $if(author)$
   \smallskip
   {\tfa\setupinterlinespace $for(author)$$author$$sep$\crlf $endfor$}
@@ -145,8 +149,12 @@ $if(date)$
   \smallskip
   {\tfa\setupinterlinespace $date$}
 $endif$
-  \bigskip
+$if(git)$
+  \smallskip
+  {\tfa\setupinterlinespace GIT: $git$}
+$endif$
 \stopalignment
+\page
 $endif$
 $if(abstract)$
 \midaligned{\it Abstract}
