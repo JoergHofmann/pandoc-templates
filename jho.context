@@ -140,7 +140,11 @@ $if(subtitle)$
   \smallskip
   {\tfa\setupinterlinespace $subtitle$}
 $endif$
-\blank[45*medium]
+$if(cover)$
+  \smallskip
+  \dontleavehmode
+  \externalfigure[titelbild.png][height=400px]
+$endif$
 $if(author)$
   \smallskip
   {\tfa\setupinterlinespace $for(author)$$author$$sep$\crlf $endfor$}
