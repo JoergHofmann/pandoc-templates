@@ -4,8 +4,11 @@
 
 	<target name="main" unless="done">
 		<echo message="Jetzt geht's los." />
-		<copy file="jho.context" tofile="../../../.local/share/pandoc/templates/jho.context" />
-		<copy file="jho.html" tofile="../../../.local/share/pandoc/templates/jho.html" />
+		<copy todir="${user.home}/.local/share/pandoc/templates">
+			<fileset dir=".">
+				<include name="jho.*" />
+			</fileset>
+		</copy>
 		<property name="done" value="done" />
 	    </target>
 		

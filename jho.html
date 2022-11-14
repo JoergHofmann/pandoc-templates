@@ -34,7 +34,7 @@ $endif$
 $for(include-before)$
 $include-before$
 $endfor$
-$if(title)$
+$if(header)$
     <header id="title-block-header">
         <h1 class="title">$title$</h1>
 	$if(subtitle)$
@@ -68,6 +68,9 @@ $endif$
 <main>
 $body$
 </main>
+<footer>
+    <p>$author$, $date$, Git $git$</p>
+</footer>
 $for(include-after)$
 $include-after$
 $endfor$
